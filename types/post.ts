@@ -1,14 +1,11 @@
-
 type PostType = {
-  slug: string
-  title: string
-  date: string
-  coverImage: string
-  excerpt: string
-  ogImage: {
-    url: string
-  }
-  content: string
-}
+  slug: string; // md 파일 이름.
+  title: string;
+  date: string;
+  coverImage: string;
+  description: string;
+  ogImage: string;
+  content: string;
+};
 
-export default PostType
+export default PostType;
