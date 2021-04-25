@@ -8,35 +8,35 @@
   border-radius: 0.6em;
   padding: 1.2rem;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 2px 7px;
-    line-height: 15px;
-    height: 15px;
-    border-radius: 0 0 0 2px;
-    background: #fff;
-    color: #34495e;
-  }
-  &.language-javascript::after {
-    background: #f6dd3b;
-    content: 'JAVASCRIPT';
-  }
-  &.language-html::after {
-    background: rgb(248, 114, 37);
-    content: 'HTML';
-    color: white;
-  }
-  &.language-css::after {
-    background: #1b6ee3;
-    content: 'CSS';
-    color: white;
-  }
+  // &::after {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   text-align: right;
+  //   font-size: 10px;
+  //   font-weight: 700;
+  //   letter-spacing: 1px;
+  //   padding: 2px 7px;
+  //   line-height: 15px;
+  //   height: 15px;
+  //   border-radius: 0 0 0 2px;
+  //   background: #fff;
+  //   color: #34495e;
+  // }
+  // &.language-javascript::after {
+  //   background: #f6dd3b;
+  //   content: 'JAVASCRIPT';
+  // }
+  // &.language-html::after {
+  //   background: rgb(248, 114, 37);
+  //   content: 'HTML';
+  //   color: white;
+  // }
+  // &.language-css::after {
+  //   background: #1b6ee3;
+  //   content: 'CSS';
+  //   color: white;
+  // }
 }
 .hljs-keyword,
 .hljs-literal,

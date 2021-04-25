@@ -37,3 +37,6 @@ body {
 /* Stop purging. */
 
 /* Your own custom utilities */
+header {
+  background: linear-gradient(-45deg, #1fab89, #62d2a2, #ffc8c8, #f99);
+}
