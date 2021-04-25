@@ -1,0 +1,67 @@
+// @import './hilight.scss';
+
+// .markdown {
+//   @apply text-lg leading-relaxed;
+
+//   h1,
+//   h2 {
+//     @apply text-3xl mt-12 mb-4 font-bold leading-snug;
+//     border-bottom: 1px solid hsla(0, 0%, 0%, 0.07);
+//     margin-top: 50px;
+//   }
+
+//   h3,
+//   h4 {
+//     @apply text-2xl mt-8 mb-4 font-bold leading-snug;
+//   }
+
+//   h5 {
+//     @apply text-xl mt-8 mb-4 leading-snug;
+//   }
+
+//   code {
+//     border-radius: 6px;
+//     background-color: #1b1f230d;
+//     padding: 0.2em 0.4em;
+//     font-size: 0.9rem;
+//   }
+
+//   p {
+//     margin: 0;
+//     margin-bottom: 21px;
+//   }
+
+//   ul {
+//     list-style: disc;
+//     margin-left: 2rem;
+//     margin-bottom: 6px;
+//   }
+
+//   blockquote {
+//     padding: 0 1em;
+//     color: #6a737d;
+//     border-left: 0.25em solid #dfe2e5;
+//   }
+
+//   pre {
+//     overflow-x: auto;
+//     margin: 10px 0;
+//     line-height: 1.7;
+
+//     code {
+//       position: relative;
+//       display: block;
+//       padding: 1.2rem;
+//     }
+//   }
+// }
+// // ` `
+
+// // ```  ```
+
+// // .markdown p,
+// // .markdown ul,
+// // .markdown ol,
+// // .markdown blockquote {
+// //   @apply my-6;
+// // }

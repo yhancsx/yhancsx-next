@@ -1,9 +1,9 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-html {
+html,
+body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -20,6 +20,10 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   color: rgb(73, 80, 87);
+}
+
+.border-bottom:not(:last-child) {
+  border-bottom: 1px solid lightgrey;
 }
 
 /* Start purging... */

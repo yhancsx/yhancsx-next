@@ -1,30 +1,27 @@
-import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Container from '../../components/container';
-import markdownStyles from '../../components/markdown-styles.module.css';
-import Layout from '../../components/layout';
-import { getPostBySlug, getAllPosts } from '../../lib/api';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React from 'react';
+import Container from '../../components/container';
+import CoverImage from '../../components/cover-image';
+import DateFormatter from '../../components/date-formatter';
+import Layout from '../../components/layout';
+import { getAllPosts, getPostBySlug } from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
 import PostType from '../../types/post';
-import React from 'react';
-import DateFormatter from '../../components/date-formatter';
-import CoverImage from '../../components/cover-image';
 
 type Props = {
   post: PostType;
-  morePosts: PostType[];
-  preview?: boolean;
 };
 
 // post markdwon -> html template
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post }: Props) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {router.isFallback ? (
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-none my-10 md:my-12 text-center md:text-left">
@@ -34,22 +31,22 @@ const Post = ({ post, morePosts, preview }: Props) => {
           <article className="mb-32">
             <Head>
               <title>{post.title} | Yhancsx</title>
-              {post?.ogImage?.url && (
-                <meta property="og:image" content={post.ogImage.url} />
-              )}
+              {post?.ogImage && <meta property="og:image" content={post.ogImage} />}
             </Head>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-none my-10 md:my-12 text-center md:text-left">
-              {post.title}
-            </h1>
-            <div className="mb-8 md:mb-16 sm:mx-0">
+            <div className="mt-12 mb-2">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight md:leading-none text-center md:text-left pb-1 ">
+                {post.title}
+              </h1>
+              <div className="text-right mt-4 text-xl italic text-gray-500 font-bold">
+                <DateFormatter dateString={post.date} />
+              </div>
+            </div>
+            <div className="mb-8 sm:mx-0">
               <CoverImage title={post.title} src={post.coverImage} />
             </div>
             <div className="max-w-2xl mx-auto">
-              <div className="mb-6 text-lg">
-                <DateFormatter dateString={post.date} />
-              </div>
               <div
-                className={markdownStyles['markdown']}
+                className="markdown"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
