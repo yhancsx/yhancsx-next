@@ -1,17 +1,15 @@
-import Avatar from '../avatar';
-import DateFormatter from '../date-formatter';
-import CoverImage from '../cover-image';
 import Link from 'next/link';
+import PostType from '../../types/post';
+import CoverImage from '../cover-image';
+import DateFormatter from '../date-formatter';
 
-type Props = {
-  title: string;
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  slug: string;
-};
-
-const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
+export default function PostPreview({
+  title,
+  coverImage,
+  date,
+  description,
+  slug,
+}: Pick<PostType, 'title' | 'coverImage' | 'date' | 'description' | 'slug'>) {
   return (
     <div>
       <div className="mb-5">
@@ -25,9 +23,7 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
       <div className="text-sm mb-4">
         <DateFormatter dateString={date} />
       </div>
-      <p className="text-base leading-relaxed mb-4 text-ellipsis">{excerpt}</p>
+      <p className="text-base leading-relaxed mb-4 text-ellipsis">{description}</p>
     </div>
   );
-};
-
-export default PostPreview;
+}

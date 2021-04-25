@@ -1,22 +1,22 @@
+import Head from 'next/head';
+import React from 'react';
 import Container from '../components/container';
 import Intro from '../components/intro';
 import Layout from '../components/layout';
+import PostPreview from '../components/posts/post-preview';
 import { getAllPosts } from '../lib/api';
-import Head from 'next/head';
-import Post from '../types/post';
-import React from 'react';
-import PostPreview from '../components/blog/post-preview';
+import { default as PostType } from '../types/post';
 
 type Props = {
-  allPosts: Post[];
+  allPosts: PostType[];
 };
 
-const Blog = ({ allPosts }: Props) => {
+const Post = ({ allPosts }: Props) => {
   return (
     <>
       <Layout>
         <Head>
-          <title>Blog | yhancsx</title>
+          <title>Posts | Yhancsx</title>
         </Head>
         <Container>
           <Intro />
@@ -28,7 +28,7 @@ const Blog = ({ allPosts }: Props) => {
                 coverImage={post.coverImage}
                 date={post.date}
                 slug={post.slug}
-                excerpt={post.excerpt}
+                description={post.description}
               />
             ))}
           </div>
@@ -38,16 +38,10 @@ const Blog = ({ allPosts }: Props) => {
   );
 };
 
-export default Blog;
+export default Post;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'excerpt',
-  ]);
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'coverImage', 'description']);
 
   return {
     props: { allPosts },
