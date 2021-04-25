@@ -35,7 +35,7 @@ Integer representing the offset to the [left, top] in pixels from the closest _r
 ```javascript
 const { offsetWidth,  offsetHeight } = element 
 ```
-Returns the [height,width] of an element, including vertical padding and borders, as an integer.  
+> Returns the [height,width] of an element, including vertical padding and borders, as an integer.  
 element의 width, height 값.
 
 #### text-shadow
